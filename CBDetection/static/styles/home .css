@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+body {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-color: #FFFFFF;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    z-index: 9;
+    background: none;
+}
+
+.link-group {
+    list-style: none;
+    display: flex;
+}
+
+.link a {
+    color: #008080;
+    opacity: 1;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    margin: 0 20px;
+    line-height: 80px;
+    font-size: 20px;
+}
+
+.index-section {
+    width: 100%;
+    height: 100vh;
+    padding: 0 50px;
+    display: block;
+    align-items: center;
+    position: relative;
+    top: 0;
+}
+
+.heading {
+    color: #008080;
+    font-size: 90px;
+    font-weight: 300;
+}
+
+.body-group {
+    width: 100%;
+    height: 100vh;
+    padding: 0 50px;
+    display: block;
+    align-items: center;
+    position: relative;
+    top: 0;
+    list-style: none;
+}
+
+.body {
+    color: #008080;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.img-section {
+    align-items: center;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #008080;
+    background: -webkit-linear-gradient(to right, #4fb9af, #045D5D);
+    background: linear-gradient(to right, #4fb9af, #045D5D);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.container {
+    height: 50px;
+    width: 430px;
+    position: relative;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    border-style: none;
+    background: transparent;
+    outline: none;
+}
+
+button {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+}
+
+h1.demo {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    color: #f5f6ff;
+}
+
+a.demo {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: rgba(202, 205, 239, 0.8);
+    margin-bottom: 3rem;
+}
+
+.demo-flex-spacer {
+    flex-grow: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    height: 100vh;
+    max-width: 1600px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* // colors
+$input-background: rgba(57, 63, 84, 0.8);
+$input-text-inactive: #7881A1;
+$input-text-active: #BFD2FF; */
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 100% 0
+    }
+}
+
+.webflow-style-input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 2px;
+    padding: 1.4rem 2rem 1.6rem;
+    background: rgba(57, 63, 84, 0.8);
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 999;
+        height: 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background-position: 0% 0%;
+        background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+        background-size: 500% auto;
+        animation: gradient 3s linear infinite;
+    }
+}
+
+.webflow-style-input input {
+    flex-grow: 1;
+    color: #BFD2FF;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+
+    &::-webkit-input-placeholder {
+        color: #7881A1;
+    }
+}
+
+.webflow-style-input button {
+    color: #7881A1;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    transition: color .25s;
+
+    &:hover {
+        color: #BFD2FF;
+    }
+}
+
+/* .container .wrapper{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px dashed #008080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.wrapper.active{
+    border: none;
+}
+.wrapper .image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.wrapper .icon{
+    font-size: 100px;
+    color: #008080;
+}
+.wrapper .text{
+    font-size: 20px;
+    font-weight: 500;
+    color: #008080;
+}
+.wrapper #cancel-btn i{
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+    top: 15px;
+    color: #008080;
+    cursor: pointer;
+    display: none;
+}
+.wrapper.active:hover #cancel-btn i{
+    display: block;
+}
+.wrapper #cancel-btn i:hover{
+    color: #000;
+  }
+  .wrapper .file-name{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
+    color: #fff;
+    display: none;
+    background: linear-gradient(to right, #4fb9af, #045D5D);
+  }
+  .wrapper.active:hover .file-name{
+    display: block;
+  }
+  .container #custom-btn{
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(to right, #4fb9af, #045D5D);
+  } */

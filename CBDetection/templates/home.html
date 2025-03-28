@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBDetection Home</title>
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}"> -->
+    <!-- <link rel="stylesheet" href="/cropDoctor/static/styles/home .css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+            min-height: 100vh;
+            font-family: sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        html,
+        body {
+            display: grid;
+            height: 100%;
+            place-items: center;
+            text-align: center;
+        }
+
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: right;
+            align-items: flex-end;
+            z-index: 9;
+            background: none;
+        }
+
+        .link-group {
+            list-style: none;
+            display: flex;
+        }
+
+        .link a {
+            color: #26a7de;
+            opacity: 1;
+            text-decoration: none;
+            text-transform: capitalize;
+            padding: 10px 30px;
+            margin: 0 20px;
+            line-height: 80px;
+            font-size: 20px;
+        }
+
+        .intro-section {
+            width: 100%;
+            height: 50vh;
+            padding: 0 50px;
+            display: block;
+            align-items: center;
+            position: relative;
+            top: 0;
+        }
+
+        .intro {
+            color: #26a7de;
+            font-size: 40px;
+            font-weight: 300;
+        }
+
+        .index-section {
+            width: 100%;
+            height: 50vh;
+            padding: 0 50px;
+            display: block;
+            align-items: center;
+            position: relative;
+            top: 0;
+        }
+
+        .heading {
+            color: #26a7de;
+            font-size: 70px;
+            font-weight: 300;
+        }
+
+        .hero {
+            color: #26a7de;
+            font-size: 90px;
+            font-weight: 350;
+            text-transform: capitalize;
+            padding-bottom: 20px;
+        }
+
+        .body-group {
+            width: 100%;
+            padding: 0 50px;
+            display: block;
+            align-items: center;
+            position: relative;
+            top: 0;
+            list-style: none;
+        }
+
+        .body {
+            color: #26a7de;
+            font-size: 40px;
+            font-weight: 300;
+        }
+
+        .img-section {
+            align-items: center;
+        }
+
+        /* button {
+            border-radius: 20px;
+            border: 1px solid #26a7de;
+            background: -webkit-linear-gradient(to right, #4fb9af, #045D5D);
+            background: linear-gradient(to right, #4fb9af, #045D5D);
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+        button:hover{
+            transform: scale(1.05);
+        } */
+
+        .container {
+            height: 50px;
+            width: 430px;
+            position: relative;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        input {
+            color: #26a7de;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        input:focus {
+            outline: 2px solid #26a7de;
+        }
+
+        input::placeholder {
+            color: rgba(40, 210, 207, 0.6);
+        }
+
+        /* Button on top of the Input */
+        .wrapper {
+            width: 400px;
+            max-width: 100%;
+            position: relative;
+        }
+
+        .wrapper input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #26a7de;
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            width: 100%;
+        }
+
+        .wrapper button {
+            background: #26a7de;
+            border-radius: 50px;
+            aspect-ratio: 1;
+            height: 80%;
+
+            position: absolute;
+            top: 10%;
+            right: 5px;
+        }
+
+        /* .container .wrapper{
+            position: relative;
+            height: 500px;
+            width: 100%;
+            border-radius: 10px;
+            background: #fff;
+            border: 2px dashed #26a7de;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .wrapper.active{
+            border: none;
+        }
+        .wrapper .image{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .wrapper .icon{
+            font-size: 100px;
+            color: #26a7de;
+        }
+        .wrapper .text{
+            font-size: 20px;
+            font-weight: 500;
+            color: #26a7de;
+        }
+        .wrapper #cancel-btn i{
+            position: absolute;
+            font-size: 20px;
+            right: 15px;
+            top: 15px;
+            color: #26a7de;
+            cursor: pointer;
+            display: none;
+        }
+        .wrapper.active:hover #cancel-btn i{
+            display: block;
+        }
+        .wrapper #cancel-btn i:hover{
+            color: #000;
+        }
+        .wrapper .file-name{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            padding: 8px 0;
+            font-size: 18px;
+            color: #fff;
+            display: none;
+            background: linear-gradient(to right, #4fb9af, #045D5D);
+        }
+        .wrapper.active:hover .file-name{
+            display: block;
+        }
+        .container #custom-btn{
+            margin-top: 30px;
+            display: block;
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: linear-gradient(to right, #4fb9af, #045D5D);
+        } */
+    </style>
+    <nav class="navbar">
+        <h2 class="link"><a href="/home">CBDetection</a></h2>
+        <ul class="link-group">
+            <li class="link"><a href="/">LogOut</a></li>
+        </ul>
+    </nav>
+    <div class="intro-section">
+        <h1 class="hero">Hello, {{ message }}</h1>
+        <h1 class="heading">Post a comment using the text box below</h1>
+    </div>
+    <form action="/detect" method="post" class="wrapper">
+        <input type="text" name="text" placeholder="Enter some text" />
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 12l14 0"></path>
+                <path d="M13 18l6 -6"></path>
+                <path d="M13 6l6 6"></path>
+            </svg>
+        </button>
+    </form>
+    <div class="message-section">
+        <h2 class="message">{{ error }}</h2>
+    </div>
+    <!-- <div class="container">
+        <div class="wrapper"> -->
+    <!-- <div class="textbox">
+                <img src="" alt="" name="img" id="img">
+                <input type="file" name="file" hidden"> 
+            </div> -->
+    <!-- <div class="content">
+                <div class="icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="text">
+                    No file chosen, yet!
+                </div>
+            </div>
+            <div id="cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="file-name">
+                File name here
+            </div>
+        </div>
+        <button onclick="defaultBtnActive()" id="custom-btn">Post Comment</button>
+        <form action="/predict" method="post" enctype="multipart/form-data"> -->
+    <!-- <input id="default-btn" type='file' name='file' hidden> -->
+    <!-- <input type="text" id="textbox" name="textbox" hidden>
+            <input id="submit-btn" type = "submit" hidden>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br> -->
+    <!-- <script>
+        const container = document.querySelector(".container")
+        const wrapper = document.querySelector(".wrapper");
+        const fileName = document.querySelector(".file-name");
+        const defaultBtn = document.querySelector("#default-btn");
+        const customBtn = document.querySelector("#custom-btn");
+        const submitBtn = document.querySelector("#submit-btn");
+        const cancelBtn = document.querySelector("#cancel-btn i");
+        const img = document.querySelector("img");
+        let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+        function defaultBtnActive(){
+            defaultBtn.click();
+        }
+        function detect(){
+            // location.href = "/predict";
+            // const reader = new FileReader();
+            // const source = img.src;
+            // console.log(source)
+            // const request = new XMLHttpRequest()
+            // request.open('POST',`/predict/${JSON.stringify(source)}`)
+            // request.send();
+            submitBtn.click();
+
+        }
+        defaultBtn.addEventListener("change", function(){
+            const file = this.files[0];
+            if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                const result = reader.result;
+                img.src = result;
+                wrapper.classList.add("active");
+                customBtn.textContent="Detect";
+                customBtn.setAttribute('onclick','detect()');
+            }
+            cancelBtn.addEventListener("click", function(){
+                img.src = "";
+                wrapper.classList.remove("active");
+                customBtn.textContent="Choose a file";
+                customBtn.setAttribute('onclick','defaultBtnActive()');
+            })
+            reader.readAsDataURL(file);
+        }
+        if(this.value){
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+        }
+        });
+    </script> -->
+</body>
+
+</html>

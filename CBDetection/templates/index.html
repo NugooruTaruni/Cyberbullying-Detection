@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropDoctor</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+</head>
+<body>
+    <h2 class="link"><a href="/home">CBDetection</a></h2>
+    <nav class="navbar">
+        <ul class="link-group">
+            <li class="link"><a href="/login">Login</a></li>
+            <li class="link"><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+    <div class="index-section">
+        <h1 class="heading">Welcome to<br>CropDoctor</h1>
+        <img src="{{url_for('static',filename='images/CBDetection.png')}}" class="index-img" alt="CropDoctor logo">
+    </div>
+    <!-- <div class="intro-section">
+        <p class="intro">This project is to help people detect what diseases can effect a plant's health and give insights on how to treat them.</p>
+        <p class="intro">Register and let plant's have a better health.</p>
+        
+    </div>     -->
+</body>
+</html>
